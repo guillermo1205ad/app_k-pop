@@ -6,6 +6,7 @@ import SubjectMissionNav from '../components/SubjectMissionNav';
 import { useProgress } from '../context/ProgressContext';
 import { reviewFlashcardsBySubject } from '../data/lessons';
 import { subjectMap } from '../data/subjects';
+import { fixSpanishText } from '../utils/helpers';
 
 function ReviewMode() {
   const { subjectId } = useParams();
@@ -68,8 +69,8 @@ function ReviewMode() {
   return (
     <div className="page mode-page">
       <section className="page-head">
-        <h1>{subject.name} · Modo Repasar</h1>
-        <p>Tarjetas rapidas para recordar ideas clave.</p>
+        <h1>{fixSpanishText(subject.name)} · Modo Repasar</h1>
+        <p>Tarjetas rápidas para recordar ideas clave.</p>
       </section>
 
       <SubjectMissionNav subjectId={subjectId} activeKey="repasar" />
@@ -84,7 +85,7 @@ function ReviewMode() {
         >
           {topics.map((topic) => (
             <option key={topic} value={topic}>
-              {topic}
+              {fixSpanishText(topic)}
             </option>
           ))}
         </select>

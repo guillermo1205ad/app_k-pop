@@ -6,7 +6,7 @@ import SubjectMissionNav from '../components/SubjectMissionNav';
 import { useProgress } from '../context/ProgressContext';
 import { getQuestionsBySubject } from '../data/questions';
 import { subjectMap } from '../data/subjects';
-import { buildFeedback, buildPracticeSession } from '../utils/helpers';
+import { buildFeedback, buildPracticeSession, fixSpanishText } from '../utils/helpers';
 import { PRACTICE_QUESTION_COUNT } from '../utils/constants';
 
 function PracticeMode() {
@@ -100,18 +100,18 @@ function PracticeMode() {
   return (
     <div className="page mode-page">
       <section className="page-head">
-        <h1>{subject.name} · Modo Practicar</h1>
-        <p>Mini mision de {total} preguntas. Responde una por una.</p>
+        <h1>{fixSpanishText(subject.name)} · Modo Practicar</h1>
+        <p>Mini misión de {total} preguntas. Responde una por una.</p>
       </section>
 
       <SubjectMissionNav subjectId={subjectId} activeKey="practicar" />
 
       {subject.parentGuide && (
-        <section className="family-guide family-guide-compact" aria-label="Ayuda breve para familia">
-          <h2>Ayuda breve para familia</h2>
+        <section className="family-guide family-guide-compact" aria-label="Ayuda breve para familias">
+          <h2>Ayuda breve para familias</h2>
           <ul>
             {subject.parentGuide.tips.slice(0, 3).map((tip) => (
-              <li key={tip}>{tip}</li>
+              <li key={tip}>{fixSpanishText(tip)}</li>
             ))}
           </ul>
         </section>

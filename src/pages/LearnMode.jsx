@@ -6,6 +6,7 @@ import SubjectMissionNav from '../components/SubjectMissionNav';
 import { lessonsBySubject } from '../data/lessons';
 import { subjectMap } from '../data/subjects';
 import { useProgress } from '../context/ProgressContext';
+import { fixSpanishText } from '../utils/helpers';
 
 function LearnMode() {
   const { subjectId } = useParams();
@@ -28,7 +29,7 @@ function LearnMode() {
   if (!subject || !lessons.length) {
     return (
       <div className="page">
-        <h1>No hay contenido de aprendizaje para esta mision.</h1>
+        <h1>No hay contenido de aprendizaje para esta misión.</h1>
         <Link to="/materias" className="btn btn-primary">
           Volver a materias
         </Link>
@@ -52,13 +53,13 @@ function LearnMode() {
   return (
     <div className="page mode-page">
       <section className="page-head">
-        <h1>{subject.name} · Modo Aprender</h1>
+        <h1>{fixSpanishText(subject.name)} · Modo Aprender</h1>
         <p>Una idea por tarjeta. Lee, observa el ejemplo y sigue con calma.</p>
       </section>
 
       <SubjectMissionNav subjectId={subjectId} activeKey="aprender" />
 
-      <ProgressBar value={progressValue} label="Capsulas revisadas" color={subject.color} />
+      <ProgressBar value={progressValue} label="Cápsulas revisadas" color={subject.color} />
       <LearningCard lesson={lessons[current]} />
 
       <section className="mode-actions">

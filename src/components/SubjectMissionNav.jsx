@@ -30,7 +30,7 @@ function SubjectMissionNav({ subjectId, activeKey }) {
   };
 
   return (
-    <nav className="subject-mission-nav" aria-label="Navegacion de la mision">
+    <nav className="subject-mission-nav" aria-label="Navegación de la misión">
       {NAV_ITEMS.map((item) => (
         <Link
           key={item.key}

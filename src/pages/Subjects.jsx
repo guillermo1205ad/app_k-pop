@@ -6,7 +6,7 @@ function Subjects() {
   const { progress, resetProgress } = useProgress();
 
   const handleReset = () => {
-    const shouldReset = window.confirm('Quieres reiniciar todo el progreso guardado?');
+    const shouldReset = window.confirm('¿Quieres reiniciar todo el progreso guardado?');
     if (shouldReset) {
       resetProgress();
     }
@@ -16,7 +16,7 @@ function Subjects() {
     <div className="page subjects-page">
       <section className="page-head">
         <h1>Elige una materia</h1>
-        <p>Cada materia es una mision especial para recuperar cristales del aprendizaje.</p>
+        <p>Cada materia es una misión especial para recuperar cristales del aprendizaje.</p>
       </section>
 
       <section className="subject-grid" aria-label="Lista de materias">
@@ -26,7 +26,7 @@ function Subjects() {
       </section>
 
       <section className="reset-panel">
-        <h2>Gestion de progreso</h2>
+        <h2>Gestión de progreso</h2>
         <p>Si quieres empezar desde cero, puedes reiniciar tu avance.</p>
         <button type="button" className="btn btn-ghost" onClick={handleReset}>
           Reiniciar progreso

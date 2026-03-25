@@ -1,3 +1,5 @@
+import { fixSpanishText } from '../utils/helpers';
+
 function QuestionCard({
   question,
   selectedOption,
@@ -10,13 +12,13 @@ function QuestionCard({
 }) {
   return (
     <article className="question-card">
-      <p className="chip">{question.topic}</p>
+      <p className="chip">{fixSpanishText(question.topic)}</p>
       {question.supportText && (
         <section className="question-support" aria-label="Texto de apoyo">
-          <p>{question.supportText}</p>
+          <p>{fixSpanishText(question.supportText)}</p>
         </section>
       )}
-      <h3>{question.question}</h3>
+      <h3>{fixSpanishText(question.question)}</h3>
       <div className="option-grid" role="group" aria-label="Opciones de respuesta">
         {question.options.map((option, index) => {
           const isChosen = selectedOption === index;
@@ -38,7 +40,7 @@ function QuestionCard({
               disabled={disabled}
               aria-pressed={isChosen}
             >
-              {option}
+              {fixSpanishText(option)}
             </button>
           );
         })}
@@ -46,8 +48,8 @@ function QuestionCard({
 
       {disabled && (
         <section className={`feedback-panel ${isCorrect ? 'is-ok' : 'is-bad'}`} aria-live="polite">
-          <p className="feedback-main">{feedback}</p>
-          <p className="feedback-help">{question.explanation}</p>
+          <p className="feedback-main">{fixSpanishText(feedback)}</p>
+          <p className="feedback-help">{fixSpanishText(question.explanation)}</p>
         </section>
       )}
 

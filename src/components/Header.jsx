@@ -14,11 +14,11 @@ function Header() {
           </span>
           <div>
             <strong>Guerreras del Aprendizaje</strong>
-            <small>Misiones de estudio para 1 Basico</small>
+            <small>Misiones de estudio para 1° Básico</small>
           </div>
         </Link>
 
-        <nav className="main-nav" aria-label="Navegacion principal">
+        <nav className="main-nav" aria-label="Navegación principal">
           <Link className={location.pathname === '/' ? 'is-active' : ''} to="/">
             Inicio
           </Link>

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import ProgressBar from './ProgressBar';
+import { fixSpanishText } from '../utils/helpers';
 
 function SubjectCard({ subject, progress }) {
   return (
@@ -9,11 +10,11 @@ function SubjectCard({ subject, progress }) {
         <span className="subject-icon">{subject.icon}</span>
       </figure>
       <div className="subject-content">
-        <h3>{subject.name}</h3>
-        <p>{subject.description}</p>
+        <h3>{fixSpanishText(subject.name)}</h3>
+        <p>{fixSpanishText(subject.description)}</p>
         <ProgressBar value={progress?.percent || 0} label="Progreso guardado" color={subject.color} />
         <Link to={`/materias/${subject.id}`} className="btn btn-primary">
-          Entrar a mision
+          Entrar a misión
         </Link>
       </div>
     </article>

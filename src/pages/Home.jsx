@@ -23,8 +23,8 @@ function Home() {
           <p className="chip">{greetingText}</p>
           <h1>Guerreras del Aprendizaje</h1>
           <p>
-            Un equipo pop magico te acompana a recuperar estrellas del conocimiento en Matematica,
-            Lenguaje, Ciencias, Historia, Ingles y la mision de Julieta.
+            Un equipo pop mágico te acompaña a recuperar estrellas del conocimiento en Matemática,
+            Lenguaje, Ciencias, Historia, Inglés y la misión de Julieta.
           </p>
 
           <section className="profile-box" aria-label="Perfil del estudiante">
@@ -57,7 +57,7 @@ function Home() {
             </Link>
           </div>
           <p className="motivational-note">
-            Las Guerreras del K-pop creen en ti: cada paso que das enciende una nueva estrella de tu escenario magico.
+            Las Guerreras del K-pop creen en ti: cada paso que das enciende una nueva estrella de tu escenario mágico.
           </p>
         </div>
 

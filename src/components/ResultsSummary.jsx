@@ -1,7 +1,9 @@
+import { fixSpanishText } from '../utils/helpers';
+
 function ResultsSummary({ score, session, weakTopics }) {
   const message =
     score >= 80
-      ? 'Excelente mision.'
+      ? 'Excelente misión.'
       : score >= 50
         ? 'Muy bien, sigue practicando.'
         : 'Buen intento, vamos otra vez.';
@@ -31,7 +33,7 @@ function ResultsSummary({ score, session, weakTopics }) {
           <ul>
             {weakTopics.slice(0, 3).map((item) => (
               <li key={item.topic}>
-                {item.topic} ({item.total})
+                {fixSpanishText(item.topic)} ({item.total})
               </li>
             ))}
           </ul>

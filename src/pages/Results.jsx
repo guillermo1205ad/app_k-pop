@@ -6,7 +6,7 @@ import SubjectMissionNav from '../components/SubjectMissionNav';
 import { useProgress } from '../context/ProgressContext';
 import { rewards } from '../data/rewards';
 import { subjectMap } from '../data/subjects';
-import { summarizeWeakTopics } from '../utils/helpers';
+import { fixSpanishText, summarizeWeakTopics } from '../utils/helpers';
 
 function Results() {
   const { subjectId } = useParams();
@@ -26,7 +26,7 @@ function Results() {
   if (!subject || !session) {
     return (
       <div className="page">
-        <h1>Aun no hay una practica reciente para mostrar.</h1>
+        <h1>Aún no hay una práctica reciente para mostrar.</h1>
         <Link to={subjectId ? `/materias/${subjectId}` : '/materias'} className="btn btn-primary">
           Volver
         </Link>
@@ -40,8 +40,8 @@ function Results() {
   return (
     <div className="page results-page">
       <section className="page-head">
-        <h1>Resumen final · {subject.name}</h1>
-        <p>Tu esfuerzo recupero nuevas estrellas del conocimiento.</p>
+        <h1>Resumen final · {fixSpanishText(subject.name)}</h1>
+        <p>Tu esfuerzo recuperó nuevas estrellas del conocimiento.</p>
       </section>
 
       <SubjectMissionNav subjectId={subjectId} activeKey="resultado" />

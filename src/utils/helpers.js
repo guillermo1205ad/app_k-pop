@@ -167,3 +167,63 @@ export function getGreetingByTime() {
   if (hour < 19) return 'Buenas tardes';
   return 'Buenas noches';
 }
+
+const TEXT_REPLACEMENTS = [
+  [/\bBasico\b/g, 'Básico'],
+  [/\bbasico\b/g, 'básico'],
+  [/\bMision\b/g, 'Misión'],
+  [/\bmision\b/g, 'misión'],
+  [/\bMagico\b/g, 'Mágico'],
+  [/\bmagico\b/g, 'mágico'],
+  [/\bNumeros\b/g, 'Números'],
+  [/\bnumeros\b/g, 'números'],
+  [/\bNumero\b/g, 'Número'],
+  [/\bnumero\b/g, 'número'],
+  [/\bPractica\b/g, 'Práctica'],
+  [/\bpractica\b/g, 'práctica'],
+  [/\bPracticas\b/g, 'Prácticas'],
+  [/\bpracticas\b/g, 'prácticas'],
+  [/\bSeccion\b/g, 'Sección'],
+  [/\bseccion\b/g, 'sección'],
+  [/\bUltima\b/g, 'Última'],
+  [/\bultima\b/g, 'última'],
+  [/\bIngles\b/g, 'Inglés'],
+  [/\bingles\b/g, 'inglés'],
+  [/\bEspanol\b/g, 'Español'],
+  [/\bespanol\b/g, 'español'],
+  [/\bNino\b/g, 'Niño'],
+  [/\bnino\b/g, 'niño'],
+  [/\bNina\b/g, 'Niña'],
+  [/\bnina\b/g, 'niña'],
+  [/\bManana\b/g, 'Mañana'],
+  [/\bmanana\b/g, 'mañana'],
+  [/\bOtono\b/g, 'Otoño'],
+  [/\botono\b/g, 'otoño'],
+  [/\bAno\b/g, 'Año'],
+  [/\bano\b/g, 'año'],
+  [/\bPequeno\b/g, 'Pequeño'],
+  [/\bpequeno\b/g, 'pequeño'],
+  [/\bPequena\b/g, 'Pequeña'],
+  [/\bpequena\b/g, 'pequeña'],
+  [/\bSenales\b/g, 'Señales'],
+  [/\bsenales\b/g, 'señales'],
+  [/\bSenal\b/g, 'Señal'],
+  [/\bsenal\b/g, 'señal'],
+  [/\bAtencion\b/g, 'Atención'],
+  [/\batencion\b/g, 'atención'],
+  [/\bRapido\b/g, 'Rápido'],
+  [/\brapido\b/g, 'rápido'],
+  [/\bTambien\b/g, 'También'],
+  [/\btambien\b/g, 'también'],
+  [/\bMas\b/g, 'Más'],
+  [/\bmas\b/g, 'más'],
+  [/\bAun\b/g, 'Aún'],
+  [/\baun\b/g, 'aún'],
+  [/\bPor que\b/g, 'Por qué'],
+  [/\bpor que\b/g, 'por qué']
+];
+
+export function fixSpanishText(value) {
+  if (typeof value !== 'string') return value;
+  return TEXT_REPLACEMENTS.reduce((text, [pattern, replacement]) => text.replace(pattern, replacement), value);
+}
