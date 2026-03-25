@@ -171,6 +171,8 @@ export function getGreetingByTime() {
 const TEXT_REPLACEMENTS = [
   [/\bBasico\b/g, 'Básico'],
   [/\bbasico\b/g, 'básico'],
+  [/\bMatematica\b/g, 'Matemática'],
+  [/\bmatematica\b/g, 'matemática'],
   [/\bMision\b/g, 'Misión'],
   [/\bmision\b/g, 'misión'],
   [/\bMagico\b/g, 'Mágico'],

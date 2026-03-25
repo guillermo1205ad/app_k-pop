@@ -10,7 +10,7 @@ const mediaBase = `${import.meta.env.BASE_URL}media`;
 export const subjects = [
   {
     id: 'matematica',
-    name: 'Matematica',
+    name: 'Matemática',
     icon: '🔢',
     color: 'var(--math-color)',
     softColor: 'var(--math-soft)',
